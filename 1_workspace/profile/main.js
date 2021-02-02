@@ -1,35 +1,55 @@
-const loveContainer = document.getElementById("love-container")
-const loveButton = document.getElementById("love-button")
-const lovecount = document.getElementById("love-count")
+const quizText = document.getElementById("quiz-text")
+const choice1 = document.getElementById("choice-1")
+const choice2 = document.getElementById("choice-2")
+const choice3 = document.getElementById("choice-3")
+const feedback = document.getElementById("feedback")
 
-let counter = 0
+// クイズの内容
+const quiz = {
+  text: "私の出身はどこ",
+  choices: [
+    {
+      text: "宮城県",
+      feedback: "お前は十分に活躍した。正解だ。"
+    },
+    {
+      text: "東京",
+      feedback: "ハズレだが、ほぉ・・・悪くない"
+    },
+    {
+      text: "千葉",
+      feedback: "全然なってない、すベてやり直せ"
+    }
+  ]
+}
+
+const reloadQuiz = function(){
+  quizText.textContent = "Q. " + quiz.text
+  choice1.textContent = quiz.choices[0].text
+  choice2.textContent = quiz.choices[1].text
+  choice3.textContent = quiz.choices[2].text
+}
+
+const choose = function(choiceNumber) {
+  feedback.textContent = quiz.choices[choiceNumber].feedback
+}
+
+choice1.onclick = function() {
+  choose(0)
+}
+choice2.onclick = function() {
+  // 1 番目の選択肢を選択
+  choose(1)
+}
+choice3.onclick = function() {
+  choose(2)
+}
+
+reloadQuiz()
+
 const phrase = [
-  "どうせやらせだろ",
-  "本当に？",
-  "本当に本当に？",
-  "本当に本当に本当に?",
-  "しょうがないなぁ～",
-  "大好き♡"
+  "https://www.instagram.com/yutos_704/",
+  "好きな音楽:洋楽",
+  "好きなボディービルダー:横川尚隆",
+  "今ハマっているアニメ:進撃の巨人"
 ]
-
-const changePhrase = function(){
-  if(counter >= 100){
-    loveContainer.textContent = phrase[5]
-  }else if(counter >= 80){
-    loveContainer.textContent = phrase[4]
-  }else if(counter >= 60){
-    loveContainer.textContent = phrase[3]
-  }else if(counter >= 40){
-    loveContainer.textContent = phrase[2]
-  }else if(counter >= 20){
-    loveContainer.textContent = phrase[1]
-  }else if(counter >= 10){
-    loveContainer.textContent = phrase[0]
-  }
-}
-
-loveButton.onclick = function(){
-  counter++;
-  lovecount.textContent = counter
-  changePhrase();
-}
