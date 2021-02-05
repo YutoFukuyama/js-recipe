@@ -6,18 +6,18 @@ const feedback = document.getElementById("feedback")
 
 // クイズの内容
 const quiz = {
-  text: "私の出身はどこ",
+  text: "留学していた国はどこ",
   choices: [
     {
-      text: "宮城県",
+      text: "オーストラリア",
       feedback: "お前は十分に活躍した。正解だ。"
     },
     {
-      text: "東京",
+      text: "アメリカ",
       feedback: "ハズレだが、ほぉ・・・悪くない"
     },
     {
-      text: "千葉",
+      text: "イギリス",
       feedback: "全然なってない、すベてやり直せ"
     }
   ]
@@ -46,10 +46,3 @@ choice3.onclick = function() {
 }
 
 reloadQuiz()
-
-const phrase = [
-  "https://www.instagram.com/yutos_704/",
-  "好きな音楽:洋楽",
-  "好きなボディービルダー:横川尚隆",
-  "今ハマっているアニメ:進撃の巨人"
-]
