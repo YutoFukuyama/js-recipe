@@ -2,17 +2,17 @@ let app = new Vue({
   el: "#app",
   data: {
     count: 0,
+    id: "stop",
   },
   methods: {
     countUp: function() {
-      this.count += 1
-    },
-    display: function() {
-      this.display.textContent = this.count / 100
-    },
-    count: function() {
-      this.setInterval(this.countUp, 10)
-      this.clearInterval
+      if ((this.id = "stop")) {
+        setInterval((this.count += 1), 10)
+        this.id = "start"
+        console.log(this.id)
+      } else if ((this.id = "start")) {
+        clearInterval(this.count)
+      }
     },
   },
 })
