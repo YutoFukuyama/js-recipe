@@ -1,4 +1,4 @@
-const imageElement = document.getElementById("dog-image")
+const imageElement = document.getElementById("dog")
 
 fetch("https://dog.ceo/api/breeds/image/random")
   .then((res) =>{
