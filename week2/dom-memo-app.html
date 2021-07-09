@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="memo-container"></div>
+    <input type="text" id="memo-input" />
+    <button id="add-button">追加</button>
+    <script>
+      const cardsContainer = document.getElementById("memo-container")
+      const input = document.getElementById("memo-input")
+      const button = document.getElementById("add-button")
+
+      button.onclick = function() {
+        // input.textContent = input.value
+        // console.log(cardsContainer.appendChild(input))
+        const card = document.createElement("div")
+        card.textContent = input.value
+        cardsContainer.append(card)
+      }
+    </script>
+  </body>
+</html>

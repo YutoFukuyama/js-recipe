@@ -5,17 +5,17 @@ const reset = document.getElementById("reset")
 
 let count = 0
 
-button1.onclick = function(){
+button1.onclick = function() {
   count -= 1
   display.textContent = count
 }
 
-button2.onclick = function(){
+button2.onclick = function() {
   count *= 2
   display.textContent = count
 }
 
-reset.onclick = function(){
+reset.onclick = function() {
   count = 0
   display.textContent = count
 }
